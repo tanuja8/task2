@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
 function App() {
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    const abc=e.target.dogsearch.value;
+    console.log(abc);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container' >
+      <div>
+      <form onSubmit={handleSubmit} >
+    <input className='search-bar' type="search" name='dogsearch' placeholder="Search" aria-label="Search"/>
+    <button type="submit" className="btn btn-primary">Search</button>
+  </form>
+      </div>
     </div>
   );
 }
